@@ -4,7 +4,8 @@ function TransactionInputModal({onClose, onSave, editTarget}){
     const[inputAmount, setInputAmount] = useState('');
     const[inputTitle, setInputTitle] = useState('');
     const[inputDate, setInputDate] = useState(new Date().toISOString().substring(0, 10));
-    
+    let maxDate = new Date().toISOString().substring(0,7);
+
     function handleAmountChange(e){
         const result = e.target.value.replace(/[^\d]/g, "");
         setInputAmount(result ? Number(result).toLocaleString() : "");
@@ -75,7 +76,8 @@ function TransactionInputModal({onClose, onSave, editTarget}){
                     <input 
                         type="date"
                         onChange={(e)=> setInputDate(e.target.value)}
-                        value={inputDate}/> 
+                        value={inputDate}
+                        max={maxDate}/> 
                 </div>
 
                 <div className="button-group">

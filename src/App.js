@@ -27,6 +27,11 @@ function App() {
     }
   })
 
+  const isTodayMonth = 
+      new Date().getFullYear() === currentDate.getFullYear() &&
+      new Date().getMonth() === currentDate.getMonth();
+  
+
   function openInputModal(item = null){
     setEditingItem(item);
     setIsInputModalOpen(true);
@@ -79,8 +84,14 @@ function App() {
               <PrevIcon/>
             </button>
             <div className='month' onClick={()=>setCurrentDate(new Date())}>{currentDate.getMonth()+1}월 </div>
-            <button className='nav-btn' onClick={handleNextMonth} >
-              <NextIcon color="var(--blue100)"/>
+            <button 
+                  className='nav-btn' 
+                  onClick={isTodayMonth ? null : handleNextMonth} 
+                  style={{color: isTodayMonth && "var(--gray100)",
+                          cursor: isTodayMonth && "default"
+                  }
+            }>
+              <NextIcon/>
             </button>
           </div>
           <button className="add-button"onClick={() => openInputModal()}>추가</button>
