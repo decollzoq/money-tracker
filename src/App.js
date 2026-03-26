@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 import TransactionList from './TransactionList';
 import TransactionInputModal from './TransactionInputModal';
+import { PrevIcon, NextIcon } from './Icons';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
@@ -9,11 +10,16 @@ function App() {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const [editingItem, setEditingItem] = useState(null);
   const [deleteItem, setDeleteItem] = useState(null);
+  const [currentDate, setCurrentDate] = useState(new Date());
 
+  const filteredTransactions = transactions.filter((t)=>(
+    t.date.getFullYear() === currentDate.getFullYear() && 
+    t.date.getMonth() === currentDate.getMonth()
+  ));
   let spending = 0;
   let income = 0;
 
-  transactions.forEach((t) => {
+  filteredTransactions.forEach((t) => {
     if(t.isSpending){
       spending += Number(t.amount);
     }else{
@@ -56,16 +62,33 @@ function App() {
     closeInputModal();
   }
 
+  function handlePrevMonth(){
+    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth()-1));
+  }
+
+  function handleNextMonth(){
+    setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth()+1));
+  }
   return (
     <div className='background'>
       <div className='container'>
         <div className='header'>
-          <div className='month-section'><h1>3월</h1></div>
-          <button onClick={() => openInputModal()}>추가</button>
+          <div className='year-section'>{currentDate.getFullYear()}년</div>
+          <div className='month-section'>
+            <button className='nav-btn' onClick={handlePrevMonth}>
+              <PrevIcon/>
+            </button>
+            <div className='month' onClick={()=>setCurrentDate(new Date())}>{currentDate.getMonth()+1}월 </div>
+            <button className='nav-btn' onClick={handleNextMonth} >
+              <NextIcon color="var(--blue100)"/>
+            </button>
+          </div>
+          <button className="add-button"onClick={() => openInputModal()}>추가</button>
         </div>
 
       <TransactionList
-        items={transactions}
+
+        items={filteredTransactions}
         onEdit={openInputModal}
         onDelete={openDeleteModal}
         />
