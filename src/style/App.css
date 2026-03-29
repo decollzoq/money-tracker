@@ -1,26 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-:root{
-    --gray100 : #e9e9e9;
-    --gray200 : #8F8F8F;
-    --gray300 : #353535;
+:root {
+    --gray100: #e9e9e9;
+    --gray200: #8f8f8f;
+    --gray300: #353535;
 
-    --blue100 : #C9E1FF;
-    --blue150 : #70A6FF;
-    --blue200 : #346AFF;
-    --blue300 : #00005F;
-    --blue400 : #0A0A2D;
+    --blue100: #c9e1ff;
+    --blue150: #70a6ff;
+    --blue200: #346aff;
+    --blue300: #00005f;
+    --blue400: #0a0a2d;
 
-    --red100 : #FFC2C4;
-    --red200 : #FF3438;
-    --red300 : #550000;
-    --red400 : #141414;
+    --red100: #ffc2c4;
+    --red200: #ff3438;
+    --red300: #550000;
+    --red400: #141414;
 }
 
-.background{
+.background {
     background-color: var(--gray100);
     display: flex;
     flex-direction: column;
@@ -30,7 +30,7 @@
     border-radius: 16px;
 }
 
-.container{
+.container {
     width: 600px;
     height: 760px;
     background-color: white;
@@ -40,7 +40,7 @@
     padding: 0 36px;
 }
 
-.header{
+.header {
     width: 100%;
     height: 90px;
     padding: 0 24px;
@@ -48,11 +48,10 @@
     grid-template-columns: 46px auto 46px;
     align-items: center;
     justify-content: space-between;
-    grid-template-areas: 
-        "year month button";
+    grid-template-areas: "year month button";
 }
-            
-.header .add-button{
+
+.header .add-button {
     width: 46px;
     height: 36px;
     background-color: white;
@@ -65,59 +64,58 @@
     cursor: pointer;
 }
 
-.header .add-button:hover{
+.header .add-button:hover {
     border: 1px solid var(--blue200);
     color: var(--blue200);
 }
 
-.month-section{
+.month-section {
     width: 180px;
     grid-area: month;
     display: flex;
     justify-content: space-between;
 }
 
-.month{
-  cursor: pointer;
-  font-size: 24px;
-  color: var(--gray300);
-  font-weight: 700;
+.month {
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--gray300);
+    font-weight: 700;
 }
 
-.year-section{
-  width: 200px;
-  grid-area: year;
-  display:flex;
-  justify-content: start;
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--gray300)
+.year-section {
+    width: 200px;
+    grid-area: year;
+    display: flex;
+    justify-content: start;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--gray300);
 }
 
-.nav-btn{
-  width: 27px;
-  height: 27px;
-  border: none; 
-  padding: 6px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background: none;
-  color: var(--blue100);
+.nav-btn {
+    width: 27px;
+    height: 27px;
+    border: none;
+    padding: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: none;
+    color: var(--blue100);
 }
-.nav-btn:hover{
-  color:var(--blue150)
-}
-
-.nav-btn img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.nav-btn:hover {
+    color: var(--blue150);
 }
 
+.nav-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
 
-.transaction-list{
+.transaction-list {
     padding: 24px;
     width: 100%;
     height: 526px;
@@ -125,18 +123,18 @@
     border: 1px solid var(--gray100);
 }
 
-.empty-stats{
+.empty-stats {
     width: 100%;
     height: 100%;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     color: var(--gray300);
 }
 
-.transaction{
-    width:100%;
+.transaction {
+    width: 100%;
     height: fit-content;
     display: grid;
     grid-template-columns: 1fr 160px 147px 1fr;
@@ -144,15 +142,15 @@
     padding: 8px 0;
 }
 
-.transaction-date{
+.transaction-date {
     width: fit-content;
     height: fit-content;
     font-size: 16px;
     font-weight: 600;
-    color:var(--gray200);
+    color: var(--gray200);
 }
 
-.transaction-title{
+.transaction-title {
     width: 174px;
     height: fit-content;
     font-size: 18px;
@@ -160,7 +158,7 @@
     color: var(--gray300);
 }
 
-.transaction-amount{
+.transaction-amount {
     width: fit-content;
     height: fit-content;
     font-size: 18px;
@@ -169,11 +167,11 @@
     margin-left: auto;
 }
 
-.transaction-amount.income{
+.transaction-amount.income {
     color: var(--red200);
 }
 
-.transaction-actions{
+.transaction-actions {
     width: 100%;
     height: 18px;
     display: flex;
@@ -181,171 +179,174 @@
     gap: 4px;
 }
 
-.edit-button, .delete-button{
+.edit-button,
+.delete-button {
     width: 100%;
     height: 100%;
     border-radius: 2px;
     border: none;
-    color:white;
-    font-size:12px;
-    font-weight:700;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
     cursor: pointer;
 }
 
-.edit-button{
+.edit-button {
     background-color: var(--blue150);
 }
-.edit-button:hover{
+.edit-button:hover {
     background-color: var(--blue200);
 }
 
-.delete-button{
+.delete-button {
     background-color: var(--red100);
 }
-.delete-button:hover{
+.delete-button:hover {
     background-color: var(--red200);
 }
 
-.stats-section{
+.stats-section {
     width: 100%;
     height: 82px;
     border-radius: 0 0 8px 8px;
     border: 1px solid var(--gray100);
     border-top: none;
-    display:grid;
+    display: grid;
     grid-template-columns: repeat(3, 1fr);
-
 }
-.stats-box{
+.stats-box {
     width: 100%;
-    height:100%;
+    height: 100%;
     padding: 16px;
 }
-.stats-box h1{
+.stats-box h1 {
     font-size: 16px;
     color: var(--gray300);
     font-weight: 600;
 }
-.stats{
+.stats {
     font-size: 20px;
     font-weight: 700;
-    float:right;
+    float: right;
 }
 
-.modal-background{
-    width:100%;
+.modal-background {
+    width: 100%;
     height: 100%;
-    background:rgba(0,0,0,0.3);
-    position:absolute;
-    top:0;
-    left:0;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 999;
 }
 
-.modal-container, .alert-container{
-    position:absolute;
+.modal-container,
+.alert-container {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
     border-radius: 24px;
     border: none;
-}   
-.modal-container{
+}
+.modal-container {
     width: 436px;
     height: 552px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 24px 38px 32px 38px;
 }
 
-.modal-container h1{
+.modal-container h1 {
     font-size: 24px;
     font-weight: 700;
     color: var(--gray300);
     margin-bottom: 28px;
 }
 
-.button-group, .type-toggle-group{
+.button-group,
+.type-toggle-group {
     width: 100%;
     height: 60px;
     border-radius: 16px;
     border: none;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
-.button-group{
-    gap:16px; 
+.button-group {
+    gap: 16px;
     margin-top: 79px;
 }
-.type-toggle-group{
-    background-color: var(--gray100); 
-    margin-bottom:28px;
+.type-toggle-group {
+    background-color: var(--gray100);
+    margin-bottom: 28px;
     padding: 4px;
 }
 
-.toggle-selected, .toggle-unselected{
+.toggle-selected,
+.toggle-unselected {
     width: 100%;
     height: 100%;
     cursor: pointer;
     border: none;
     border-radius: 12px;
-    font-size:20px;
+    font-size: 20px;
     font-weight: 700;
 }
 
-.toggle-selected{
+.toggle-selected {
     color: var(--gray300);
     background-color: white;
 }
-.toggle-unselected{
+.toggle-unselected {
     color: var(--gray200);
     background-color: var(--gray100);
 }
 
-.input-group{
+.input-group {
     width: 100%;
     height: 60px;
     margin-bottom: 16px;
     border-bottom: 1px solid var(--gray100);
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.input-group-date{
+.input-group-date {
     width: 100%;
     height: 60px;
     padding: 18px 0px 18px 0px;
-    display:flex;
+    display: flex;
     justify-content: space-between;
     cursor: pointer;
     outline: none;
 }
-input{
+input {
     outline: none;
     border: none;
     cursor: pointer;
 }
-.input-group input{
+.input-group input {
     width: 300px;
     height: 100%;
     font-size: 24px;
-    display:inline-block;
+    display: inline-block;
 }
 
-.input-group-date input{
+.input-group-date input {
     width: 100px;
     height: 24px;
     color: var(--blue200);
-    position: relative; 
+    position: relative;
 }
 
-.input-group-date input[type='date']::-webkit-calendar-picker-indicator{
-    position: absolute; 
+.input-group-date input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
     left: 0;
     top: 0;
     width: 100%;
@@ -355,67 +356,72 @@ input{
     color: transparent;
 }
 
-.input-group input::placeholder{
-    font-size:18px;
-    color:var(--gray200);
+.input-group input::placeholder {
+    font-size: 18px;
+    color: var(--gray200);
 }
 
-.button-close-modal, .button-add-transaction, .button-delete-transaction{
+.button-close-modal,
+.button-add-transaction,
+.button-delete-transaction {
     border: none;
     width: 100%;
     height: 100%;
     border-radius: 16px;
     cursor: pointer;
-    font-size:20px;
+    font-size: 20px;
     font-weight: 700;
 }
-.button-close-modal{
+.button-close-modal {
     background-color: var(--gray100);
     color: var(--gray200);
 }
 
-.button-close-modal:hover{
+.button-close-modal:hover {
     background-color: var(--gray200);
     color: white;
 }
 
-.button-add-transaction, .button-delete-transaction{
+.button-add-transaction,
+.button-delete-transaction {
     background-color: var(--blue150);
     color: white;
 }
 
-.button-add-transaction:hover, .button-delete-transaction:hover{
-    background-color: var(--blue200); 
+.button-add-transaction:hover,
+.button-delete-transaction:hover {
+    background-color: var(--blue200);
 }
 
-.alert-container{
+.alert-container {
     width: 344px;
     height: 200px;
     padding: 30px 26px 24px 26px;
 }
-.alert-container h1{
-    font-size:24px;
+.alert-container h1 {
+    font-size: 24px;
     font-weight: 700;
     color: var(--gray300);
     margin-bottom: 12px;
 }
 
-.alert-container p{
+.alert-container p {
     font-size: 18px;
     color: var(--gray300);
     margin-bottom: 32px;
 }
 
-.alert-container .button-group{
+.alert-container .button-group {
     height: 50px;
-    gap:12px;
+    gap: 12px;
     margin-top: 34px;
 }
 
-.wonStyle, .starStyle {
-  font-size: 24px;
-  font-weight: 700;
+.wonStyle,
+.starStyle {
+    font-size: 24px;
+    font-weight: 700;
 }
-.starStyle{
-  color: var(--red200);
+.starStyle {
+    color: var(--red200);
 }
